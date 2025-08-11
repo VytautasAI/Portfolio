@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Building, Calendar, MapPin, ArrowUpRight, Briefcase } from 'lucide-react'
@@ -30,7 +31,7 @@ const Experience = () => {
       company: 'BrightLayer Technologies',
       position: 'Full-Stack Developer | React, Node.js, PostgreSQL',
       duration: 'Aug 2016 - Dec 2018',
-      location: 'London Area, United Kingdom',
+      location: 'Brighton, United Kingdom',
       type: 'Remote',
       description: 'Developed enterprise-grade web applications with React, Node.js, PostgreSQL, and RESTful APIs for complex business requirements.',
       achievements: [
@@ -43,11 +44,11 @@ const Experience = () => {
       current: false
     },
     {
-      company: 'PixelWave IT Solutions',
+      company: 'PixelWave Solutions',
       position: 'Junior Web Developer | PHP, Laravel, JavaScript',
       duration: 'Jun 2014 - Jul 2016',
-      location: 'Berkhamsted, England, United Kingdom',
-      type: 'Hybrid',
+      location: 'Middlesbrough, United Kingdom',
+      type: 'Remote',
       description: 'Built custom Laravel applications and migrated legacy PHP systems to modern frameworks while implementing secure authentication and payment systems.',
       achievements: [
         'Built custom Laravel applications and migrated legacy PHP systems',
@@ -60,7 +61,7 @@ const Experience = () => {
     }
   ]
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -71,12 +72,12 @@ const Experience = () => {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' },
+      transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
     },
   }
 

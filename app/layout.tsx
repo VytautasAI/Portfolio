@@ -15,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <title>Vytautas Brauka - Full Stack Developer</title>
         <meta name="description" content="Professional portfolio of Vytautas Brauka, Full Stack Developer specializing in modern web technologies." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

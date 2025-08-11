@@ -7,7 +7,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
+    { icon: Github, href: 'https://github.com/VytautasAI', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/vytautas-brauka', label: 'LinkedIn' },
     { icon: Mail, href: 'mailto:vytautasbriauka66@gmail.com', label: 'Email' },
   ]

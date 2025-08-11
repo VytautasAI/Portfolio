@@ -1,11 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Download, Code, Globe } from 'lucide-react'
+import type { Variants } from 'framer-motion'
+import { Download, Code, Globe } from 'lucide-react'
 import Image from 'next/image'
 
 const Hero = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -16,12 +17,12 @@ const Hero = () => {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
     },
   }
 
@@ -53,7 +54,7 @@ const Hero = () => {
               variants={itemVariants}
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-slate-100 mb-6 leading-tight"
             >
-              Hi, I'm{' '}
+              Hi, I&apos;m{' '}
               <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
                 Vytautas
               </span>
@@ -95,23 +96,6 @@ const Hero = () => {
                 Download CV
               </motion.a>
             </motion.div>
-
-            <motion.div variants={itemVariants} className="flex items-center space-x-6">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">5+</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Years Experience</div>
-              </div>
-              <div className="w-px h-12 bg-slate-200 dark:bg-slate-700" />
-              <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">50+</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Projects Completed</div>
-              </div>
-              <div className="w-px h-12 bg-slate-200 dark:bg-slate-700" />
-              <div className="text-center">
-                <div className="text-2xl font-bold text-slate-900 dark:text-slate-100">15+</div>
-                <div className="text-sm text-slate-600 dark:text-slate-400">Technologies</div>
-              </div>
-            </motion.div>
           </div>
 
           {/* Profile Image */}
@@ -122,10 +106,12 @@ const Hero = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full bg-gradient-primary p-2">
                 <div className="w-full h-full rounded-full overflow-hidden">
-                  <img
+                  <Image
                     src="/20250808_120052.jpg"
                     alt="Vytautas Brauka"
                     className="w-full h-full object-cover"
+                    width={320}
+                    height={320}
                   />
                 </div>
               </div>
@@ -150,20 +136,6 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          variants={itemVariants}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-slate-400 dark:text-slate-500"
-          >
-            <span className="text-sm mb-2">Scroll to explore</span>
-            <ArrowDown size={20} />
-          </motion.div>
-        </motion.div>
       </motion.div>
     </section>
   )

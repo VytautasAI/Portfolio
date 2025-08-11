@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { GraduationCap, Calendar, MapPin, BookOpen, Award } from 'lucide-react'
@@ -11,56 +12,24 @@ const Education = () => {
 
   const education = [
     {
-      institution: 'ProQual AB',
-      degree: "Bachelor's degree",
-      field: 'Advanced Software Development',
-      duration: 'Aug 2023 - Apr 2024',
-      location: 'Remote',
-      description: 'Advanced studies focusing on modern development practices, AI integration, and full-stack technologies.',
-      highlights: [
-        'Large Language Models (LLM) and AI integration',
-        'Advanced Ruby on Rails development',
-        'Modern JavaScript frameworks and Redux.js',
-        'Retrieval-Augmented Generation (RAG) systems'
-      ],
-      technologies: ['LLM', 'Ruby on Rails', 'SASS', 'Python', 'RAG', 'Bootstrap', 'CSS', 'HTML', 'MySQL', 'GitHub', 'Git', 'Redux.js', 'JavaScript'],
-      recent: true
-    },
-    {
-      institution: 'City & Guilds of London Art School',
-      degree: "Bachelor's degree",
-      field: 'Computer Science',
-      duration: 'Oct 2013 - Sep 2014',
-      location: 'London, United Kingdom',
-      description: 'Intensive computer science program with focus on practical web development and e-commerce solutions.',
-      highlights: [
-        'Core web technologies: HTML, CSS, JavaScript, PHP, MySQL',
-        'Created full e-commerce website with user authentication',
-        'Implemented secure payment processing systems',
-        'Database design and optimization techniques'
-      ],
-      technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-      recent: false
-    },
-    {
-      institution: 'University of Hertfordshire',
-      degree: 'Bachelor of Science - BS',
+      institution: 'West Herts College',
+      degree: 'Bachelor of Science',
       field: 'Computer Software Engineering',
-      duration: 'Sep 2010 - Aug 2013',
-      location: 'Hertfordshire, United Kingdom',
+      duration: 'Sep 2011 - July 2013',
+      location: 'Watford, United Kingdom',
       description: 'Comprehensive software engineering program covering software development lifecycle, databases, and web applications.',
       highlights: [
-        'Software Engineering fundamentals and best practices',
-        'Database design and management systems',
-        'Web Application Development methodologies',
-        'Final project: Real-time event tracking platform using PHP and MySQL'
+        'Completed a one-year Higher National Certificate(HNC) in Computing with a focus on software development.',
+        'Covered core programming concepts including Java, JavaScript, HTML/CSS, and database management.',
+        'Gained practical experience through group projects and coding challenges.',
+        'Developed skills in problem-solving, software design, and teamwork.'
       ],
-      technologies: ['Software Engineering', 'Databases', 'Web Development', 'PHP', 'MySQL'],
+      technologies: ['Software Engineering', 'Databases', 'Web Development', 'Java', 'JavaScript', 'HTML/CSS'],
       recent: false
     }
   ]
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -71,12 +40,12 @@ const Education = () => {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, ease: 'easeOut' },
+      transition: { duration: 0.5, ease: 'easeOut' as const },
     },
   }
 
@@ -141,7 +110,7 @@ const Education = () => {
                     </div>
                     
                     <div className="flex flex-col lg:items-end gap-2 lg:ml-6 mt-4 lg:mt-0">
-                      <div className="flex items-center text-slate-500 dark:text-slate-400 text-sm">
+                      <div className="flex items=center text-slate-500 dark:text-slate-400 text-sm">
                         <Calendar size={14} className="mr-2" />
                         {edu.duration}
                       </div>

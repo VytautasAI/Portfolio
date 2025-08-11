@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from 'lucide-react'
@@ -34,7 +35,7 @@ const Contact = () => {
     {
       icon: Github,
       name: 'GitHub',
-      url: 'https://github.com',
+      url: 'https://github.com/VytautasAI',
       color: 'bg-slate-900'
     },
     {
@@ -45,7 +46,7 @@ const Contact = () => {
     }
   ]
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -56,12 +57,12 @@ const Contact = () => {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   }
 
@@ -76,11 +77,11 @@ const Contact = () => {
           <motion.div variants={itemVariants} className="text-center mb-16">
             <span className="text-blue-600 font-semibold text-lg">Get In Touch</span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mt-2 mb-6">
-              Let's Work Together
+              Let&apos;s Work Together
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              I'm always interested in new opportunities and exciting projects. 
-              Feel free to reach out if you'd like to discuss potential collaboration.
+              I&apos;m always interested in new opportunities and exciting projects. 
+              Feel free to reach out if you&apos;d like to discuss potential collaboration.
             </p>
           </motion.div>
 
@@ -94,6 +95,8 @@ const Contact = () => {
                   <motion.a
                     key={info.title}
                     href={info.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     className="flex items-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors duration-200"
                   >

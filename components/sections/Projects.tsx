@@ -1,9 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Github, ExternalLink, Play } from 'lucide-react'
+import Image from 'next/image'
 
 const Projects = () => {
   const ref = useRef(null)
@@ -48,7 +50,7 @@ const Projects = () => {
     }
   ]
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -59,12 +61,12 @@ const Projects = () => {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   }
 
@@ -96,10 +98,12 @@ const Projects = () => {
                 className="bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-card hover:shadow-xl transition-all duration-300 border border-slate-100 dark:border-slate-700"
               >
                 <div className="relative overflow-hidden">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
                     className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
+                    width={500}
+                    height={500}
                   />
                   <div className="absolute top-4 right-4">
                     <span className="px-3 py-1 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm text-slate-900 dark:text-slate-100 rounded-full text-sm font-medium">

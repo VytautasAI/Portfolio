@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Award, Users, Clock, Target } from 'lucide-react'
@@ -9,7 +10,7 @@ const About = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -20,12 +21,12 @@ const About = () => {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
+      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
     },
   }
 
@@ -72,7 +73,7 @@ const About = () => {
 
             <motion.div variants={itemVariants} className="space-y-6 text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               <p>
-                I'm a dedicated Full Stack Developer with over 6 years of experience specializing in 
+                I&apos;m a dedicated Full Stack Developer with over 6 years of experience specializing in 
                 AI-powered SaaS platforms, real-time applications, and serverless solutions. My expertise 
                 spans modern web technologies with a focus on performance, scalability, and user experience.
               </p>
@@ -84,7 +85,7 @@ const About = () => {
               </p>
               
               <p>
-                I take a product-first approach, focusing on clean, modular code that's built quickly 
+                I take a product-first approach, focusing on clean, modular code that&apos;s built quickly 
                 to a high standard. My clients choose me for reliable delivery, clear communication, 
                 and proactive problem-solving that drives real business results.
               </p>
