@@ -32,13 +32,13 @@ const Projects = () => {
       category: 'Full Stack Web App'
     },
     {
-      title: 'AI Chatbot',
-      description: 'An advanced AI assistant that can understand and generate natural language, answer questions, solve problems, and create content in real time. It’s designed to adapt to different topics, tones, and contexts, making conversations feel human-like and interactive.',
-      image: '/img/ai-chatbot.webp',
-      technologies: ['Next.js', 'TypeScript', 'TailwindCSS', 'OpenAI', 'Vercel'],
-      githubUrl: 'https://github.com/VytautasAI/AIChatbot',
-      liveUrl: 'https://ai-chatbot-professional.vercel.app',
-      category: 'AI Chatbot'
+      title: 'Analytics Dashboard',
+      description: 'A modern, high-performance web application for real-time cryptocurrency price tracking, built with Next.js 15 and React 19. This project demonstrates advanced frontend development practices, including real-time data visualization, responsive design, and optimal performance.',
+      image: '/img/btc-tracking.webp',
+      technologies: ['Next.js', 'TypeScript', 'D3.js', 'TailwindCSS', 'React Spring', 'Vercel'],
+      githubUrl: 'https://github.com/VytautasAI/BTC-tracking',
+      liveUrl: 'https://btc-trading-dashboard.vercel.app',
+      category: 'Data Viz'
     },
     {
       title: 'Banking App Dashboard',
