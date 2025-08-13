@@ -107,7 +107,7 @@ const Hero = () => {
               <div className="w-80 h-80 rounded-full bg-gradient-primary p-2">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <Image
-                    src="/20250808_120052.jpg"
+                    src="/img/avatar.jpg"
                     alt="Vytautas Brauka"
                     className="w-full h-full object-cover"
                     width={320}

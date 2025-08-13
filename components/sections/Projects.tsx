@@ -6,6 +6,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Github, ExternalLink, Play } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Projects = () => {
   const ref = useRef(null)
@@ -14,39 +15,39 @@ const Projects = () => {
   const projects = [
     {
       title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with modern UI, secure payments, and admin dashboard. Built with React, Node.js, and PostgreSQL.',
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'AWS'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
-      category: 'Full Stack'
+      description: 'Online store where customers can easily shop for a variety of quality shoes, compare options, get personalized recommendations, and enjoy a smooth, hassle-free shopping experience on any device. It also has an admin panel where the owner can manage all the necessary things to keep the website updated.',
+      image: '/img/foot-finesse.webp',
+      technologies: ['Next', 'Typescript', 'Node.js', 'PostgreSQL', 'Stripe', 'Vercel'],
+      githubUrl: 'https://github.com/VytautasAI/Foot-Finesse',
+      liveUrl: 'https://foot-finesse-alpha.vercel.app',
+      category: 'Full Stack Web App'
     },
     {
-      title: 'Task Management App',
-      description: 'Collaborative project management tool with real-time updates, kanban boards, and team collaboration features.',
-      image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Vue.js', 'Express', 'MongoDB', 'Socket.io', 'Docker'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
+      title: 'Eventilyze App',
+      description: 'Event Planner & Participation System, a secure and intuitive web platform designed for creating, managing, and participating in public and private events with optional registration fees. Built with Next.js and Tailwind CSS, the frontend provides a responsive, user-friendly interface that integrates seamlessly with the backend API to deliver a comprehensive event management experience.',
+      image: '/img/eventlyze.webp',
+      technologies: ['Next.js', 'Typescript','ShadCN/UI','Node.js', 'Prisma ORM', 'PostgreSQL', 'Vercel'],
+      githubUrl: 'https://github.com/VytautasAI/eventlyze-client',
+      liveUrl: 'https://eventlyze.vercel.app',
+      category: 'Full Stack Web App'
+    },
+    {
+      title: 'AI Chatbot',
+      description: 'An advanced AI assistant that can understand and generate natural language, answer questions, solve problems, and create content in real time. It’s designed to adapt to different topics, tones, and contexts, making conversations feel human-like and interactive.',
+      image: '/img/ai-chatbot.webp',
+      technologies: ['Next.js', 'TypeScript', 'TailwindCSS', 'OpenAI', 'Vercel'],
+      githubUrl: 'https://github.com/VytautasAI/AIChatbot',
+      liveUrl: 'https://ai-chatbot-professional.vercel.app',
+      category: 'AI Chatbot'
+    },
+    {
+      title: 'Banking App Dashboard',
+      description: 'Modern landing page for fintechs and financial services, built with Vite, React, and TailwindCSS. Responsive interface, smooth animations, and elegant design.',
+      image: '/img/landing-bank.webp',
+      technologies: ['React', 'Vite', 'Typescript', 'TailwindCSS', 'Vercel'],
+      githubUrl: 'https://github.com/VytautasAI/HooBank-Dashboard',
+      liveUrl: 'https://hoobank.vercel.app',
       category: 'Web App'
-    },
-    {
-      title: 'Analytics Dashboard',
-      description: 'Real-time business intelligence dashboard with interactive charts, data visualization, and reporting capabilities.',
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['Next.js', 'TypeScript', 'D3.js', 'Python', 'Redis'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
-      category: 'Data Viz'
-    },
-    {
-      title: 'Mobile Banking App',
-      description: 'Secure mobile banking application with biometric authentication, transaction history, and budget tracking.',
-      image: 'https://images.pexels.com/photos/4386366/pexels-photo-4386366.jpeg?auto=compress&cs=tinysrgb&w=800',
-      technologies: ['React Native', 'Firebase', 'Node.js', 'Encryption'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
-      category: 'Mobile'
     }
   ]
 
@@ -84,7 +85,7 @@ const Projects = () => {
               Featured Projects
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              A showcase of my recent work, demonstrating expertise across 
+              A showcase of my recent work, demonstrating expertise across
               different technologies and project types.
             </p>
           </motion.div>
@@ -166,14 +167,16 @@ const Projects = () => {
           </div>
 
           <motion.div variants={itemVariants} className="text-center mt-12">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-8 py-4 bg-gradient-primary text-white font-semibold rounded-lg shadow-card hover:shadow-xl transition-all duration-300"
-            >
-              <Github size={20} className="mr-2" />
-              View All Projects
-            </motion.button>
+            <Link href={'https://github.com/VytautasAI?tab=repositories'}>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center px-8 py-4 bg-gradient-primary text-white font-semibold rounded-lg shadow-card hover:shadow-xl transition-all duration-300"
+              >
+                <Github size={20} className="mr-2" />
+                View All Projects
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
